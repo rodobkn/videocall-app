@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div 
+          className='fixed top-0 left-0 w-full h-full bg-gradient-to-br from-pink-400 to-[#0055D1] rounded-md filter blur-sm opacity-50 -z-50'
+        />
+        {children}
+      </body>
     </html>
   );
 }
